@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TextBitmapFont",
+  "description": "Bitmap font file for toyph scrolling text animation. Each glyph is a binary pixel grid at the specified character height.",
+  "type": "object",
+  "required": ["name", "charHeight", "topMargin", "bottomMargin", "defaultSpacing", "glyphs"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Font identifier"
+    },
+    "charHeight": {
+      "type": "integer",
+      "minimum": 8,
+      "maximum": 13,
+      "description": "Pixel height of character glyphs (topMargin + charHeight + bottomMargin must equal 13)"
+    },
+    "topMargin": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "Blank rows above the character area"
+    },
+    "bottomMargin": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "Blank rows below the character area"
+    },
+    "defaultSpacing": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "default": 1,
+      "description": "Columns of blank space between characters"
+    },
+    "glyphs": {
+      "type": "object",
+      "description": "Map of character (as string) to glyph bitmap",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["width", "pixels"],
+        "properties": {
+          "width": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 13,
+            "description": "Pixel width of this glyph"
+          },
+          "pixels": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "enum": [0, 4095]
+            },
+            "description": "Flat row-major pixel array. Length must equal charHeight * width. Values: 0 (off) or 4095 (max brightness)."
+          }
+        }
+      }
+    }
+  }
+}

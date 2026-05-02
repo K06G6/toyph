@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "defaultTransition": {
+    "type": "fade",
+    "durationMs": 1000,
+    "frameIntervalMs": 50
+  },
+  "sequence": [
+    { "type": "glyph", "path": "glyphs/mandalorian.json", "brightness": 0.5, "displayDurationMs": 10000 },
+    { "type": "scrolling_text", "text": "This is the way", "font": "fonts/auraboo.json", "brightness": 0.5, "frameIntervalMs": 50 },
+    { "type": "glyph", "path": "glyphs/rebel.json", "brightness": 0.5, "displayDurationMs": 10000 }
+  ],
+  "effects": [
+    { "type": "TRIPLE_SCANLINE", "frameIntervalMs": 50, "trailingIntervalMs": 3000 },
+    { "type": "GLITCH_TEAR", "frameIntervalMs": 80, "trailingIntervalMs": 3000 }
+  ],
+  "filters": [
+    { "type": "pip_boy", "value": 0.8 }
+  ]
+}

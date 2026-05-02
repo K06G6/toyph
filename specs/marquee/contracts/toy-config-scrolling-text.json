@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SCROLLING_TEXT AnimationConfig",
+  "description": "Animation config entry for scrolling text in toy-config.json",
+  "type": "object",
+  "required": ["type", "text", "font", "frameIntervalMs", "trailingIntervalMs"],
+  "properties": {
+    "type": {
+      "const": "SCROLLING_TEXT"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The text to render and scroll as a marquee"
+    },
+    "font": {
+      "type": "string",
+      "description": "Asset path to the bitmap font JSON file (e.g., 'fonts/default.json')"
+    },
+    "frameIntervalMs": {
+      "type": "integer",
+      "minimum": 30,
+      "description": "Milliseconds between scroll steps (each step = 1 column shift)"
+    },
+    "trailingIntervalMs": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Pause in ms after scroll completes (before fade-back to image)"
+    }
+  },
+  "examples": [
+    {
+      "type": "SCROLLING_TEXT",
+      "text": "THIS IS THE WAY",
+      "font": "fonts/default.json",
+      "frameIntervalMs": 80,
+      "trailingIntervalMs": 1000
+    }
+  ]
+}

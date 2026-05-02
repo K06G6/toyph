@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toy_name">Toyph</string>
+    <string name="toy_summary">Open-source glyph toy toolkit for Nothing phones</string>
+</resources>
