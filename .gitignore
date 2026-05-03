@@ -12,7 +12,9 @@ Thumbs.db
 .env*
 /.kotlin
 /.run
+/.claude
 /.claude/settings.local.json
+/.specify
 /captures
 *.apk
 *.aab
