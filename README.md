@@ -1,5 +1,7 @@
 # Toyph
 
+![Toyph Star Wars demo](toyph-starwars.gif)
+
 Toyph is an Android Glyph Toy for Nothing phones. It reads
 `app/src/main/assets/toy-config.json` and renders glyphs, scrolling text,
 effects, transitions, and filters on the 13x13 Glyph Matrix.
@@ -269,6 +271,48 @@ Then choose **Toyph** from the list.
 
 After you edit `toy-config.json`, glyphs, fonts, or code, run `installDebug`
 again to update the app on the phone.
+
+### 10. If you want several Toyphs installed at the same time
+
+If you install Toyph again with the same app ID, Android replaces the old one.
+To keep multiple Toyph variants on the phone at once, each build needs:
+
+- a different **Android app ID**
+- a different visible **toy name**
+
+#### Change the app ID
+
+Edit `app/build.gradle.kts` and change:
+
+```kotlin
+applicationId = "com.toyph.app"
+```
+
+to something unique, for example:
+
+```kotlin
+applicationId = "com.toyph.app.mando"
+```
+
+#### Change the visible Toy name
+
+Edit `app/src/main/res/values/strings.xml` and change:
+
+```xml
+<string name="toy_name">Toyph</string>
+```
+
+to something unique, for example:
+
+```xml
+<string name="toy_name">Toyph Mando</string>
+```
+
+You can also change `toy_summary` in the same file if you want the entry in the
+Glyph Toy list to be easier to tell apart.
+
+Then build and install again. Repeat with a new app ID and name for each extra
+Toyph variant.
 
 
 ## Detailed deployment notes
