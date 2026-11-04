@@ -6,15 +6,15 @@
     "frameIntervalMs": 50
   },
   "sequence": [
-    { "type": "glyph", "path": "glyphs/mandalorian.json", "brightness": 0.5, "displayDurationMs": 10000 },
-    { "type": "scrolling_text", "text": "This is the way", "font": "fonts/auraboo.json", "brightness": 0.5, "frameIntervalMs": 50 },
-    { "type": "glyph", "path": "glyphs/rebel.json", "brightness": 0.5, "displayDurationMs": 10000 }
+    { "type": "glyph", "path": "glyphs/pickle-rick.json", "brightness": 0.9, "displayDurationMs": 8000 },
+    { "type": "scrolling_text", "text": "PICKLE RIIICK!!", "font": "fonts/auraboo.json", "brightness": 0.8, "frameIntervalMs": 40 },
+    { "type": "glyph", "path": "glyphs/pickle-rick.json", "brightness": 0.9, "displayDurationMs": 5000 }
   ],
   "effects": [
-    { "type": "TRIPLE_SCANLINE", "frameIntervalMs": 50, "trailingIntervalMs": 3000 },
-    { "type": "GLITCH_TEAR", "frameIntervalMs": 80, "trailingIntervalMs": 3000 }
+    { "type": "GLITCH_TEAR", "frameIntervalMs": 60, "trailingIntervalMs": 2000 },
+    { "type": "TRIPLE_SCANLINE", "frameIntervalMs": 50, "trailingIntervalMs": 1500 }
   ],
   "filters": [
-    { "type": "pip_boy", "value": 0.8 }
+    { "type": "pip_boy", "value": 0.7 }
   ]
 }
